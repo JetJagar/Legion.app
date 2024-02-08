@@ -1,0 +1,42 @@
+﻿@model Legion.app.Models.LegionRef
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LegionRef</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Legion_Primarch_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Legion_Primarch_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loyal_or_Heretic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loyal_or_Heretic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LegionDetail.Legion_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LegionDetail.Legion_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ref_Legion_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

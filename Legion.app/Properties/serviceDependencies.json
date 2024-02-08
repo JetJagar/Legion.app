@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets"
+    },
+    "identityapp1": {
+      "type": "identityapp"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:legionapp_01",
+      "dynamicId": null
+    }
+  }
+}

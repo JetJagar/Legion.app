@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Legion.app.Models.LegionDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Legion_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Legion_Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Primarch_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LegionRef.Legion_Primarch_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Legion_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Legion_Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Primarch_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LegionRef.Legion_Primarch_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Legion_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Legion_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Legion_ID })
+        </td>
+    </tr>
+}
+
+</table>

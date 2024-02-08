@@ -1,0 +1,56 @@
+﻿@model Legion.app.Models.LegionDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LegionDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Legion_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Legion_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Legion_Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Legion_Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Primarch_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Primarch_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LegionRef.Legion_Primarch_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LegionRef.Legion_Primarch_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
